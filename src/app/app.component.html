@@ -2,7 +2,19 @@
 
 <nav>
   <button type="button" (click)="toggleEditor('formControl')">FormControl</button>
+  <button type="button" (click)="toggleEditor('formGroup')">FormGroup</button>
+  <button type="button" (click)="toggleEditor('nested')">Nested FG</button>
+  <button type="button" (click)="toggleEditor('validation')">Validation</button>
+  <button type="button" (click)="toggleEditor('dynamic')">Dynamic</button>
+  <button type="button" (click)="toggleEditor('select')">Select</button>
 </nav>
+<hr />
 
 <app-form-control-example *ngIf="showFormControlEditor"></app-form-control-example>
+<app-form-group-example *ngIf="showFormGroupEditor"></app-form-group-example>
+<app-nested-form-group-example *ngIf="showNestedEditor"></app-nested-form-group-example>
+<app-validation-example *ngIf="showValidationEditor"></app-validation-example>
+<app-dynamic-example *ngIf="showDynamicEditor"></app-dynamic-example>
+<app-select-controls-example *ngIf="showSelectEditor"></app-select-controls-example>
+
 

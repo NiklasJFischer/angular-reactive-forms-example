@@ -1,0 +1,33 @@
+<form [formGroup]="selectForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="select-object-name">Välj frukt: </label>
+    <select
+      id="select-object-name"
+      formControlName="selectObject"
+      [compareWith]="compareFruit"
+    >
+      <option *ngFor="let fruit of allFruits" [ngValue]="fruit">
+        {{ fruit.name }}
+      </option>
+    </select>
+  </div>
+  <div>
+    <label for="select-id-name">Välj frukt: </label>
+    <select id="select-id-name" formControlName="selectId">
+      <option *ngFor="let fruit of allFruits" [value]="fruit.id">
+        {{ fruit.name }}
+      </option>
+    </select>
+  </div>
+  <div *ngFor="let fruit of allFruits">
+    <label for="radio-name">{{ fruit.name }}</label>
+    <input
+      id="radio-name"
+      type="radio"
+      [value]="fruit.id"
+      formControlName="radio"
+    />
+  </div>
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!selectForm.valid">Submit</button>
+</form>
